@@ -1,0 +1,175 @@
+db.roles.insertOne(
+  {
+    "_id": "alumno", 
+    "nombreRol": "Alumno"
+  }
+)
+
+db.roles.insertOne(
+  {
+    "_id": "maestro",
+    "nombreRol": "Maestro"
+  }
+)
+
+db.roles.insertOne(
+  {
+    "_id": "personal_administrativo",
+    "nombreRol": "Personal Administrativo"
+  }
+)
+
+db.roles.insertOne(
+  {
+    "_id": "administrador",
+    "nombreRol": "Administrador"
+  }
+)
+
+db.career.insertOne(
+  {
+    "_id": "DSM",
+    "nombreCarrera": "Desarrollo de Software Multiplataforma",
+    "descripcion": "Formación en programación, diseño y despliegue de aplicaciones multiplataforma.",
+    "duracion": "4 años",
+    "activo": true
+  }
+)
+
+db.career.insertOne(
+  {
+    "_id": "EVND",
+    "nombreCarrera": "Entornos virtuales y negocios digitales",
+    "descripcion": "Especialización en gestión de entornos virtuales y comercio digital.",
+    "duracion": "4 años",
+    "activo": true
+  }
+)
+
+db.career.insertOne(
+  {
+    "_id": "IRD",
+    "nombreCarrera": "Infraestructura de redes digitales",
+    "descripcion": "Preparación en diseño, implementación y administración de redes digitales.",
+    "duracion": "4 años",
+    "activo": true
+  }
+)
+
+db.cicloEscolar.insertOne(
+    {
+    "_id": "2025-A",
+    "fechaInicio": ISODate("2025-05-08T00:00:00Z"),
+    "fechaFin": ISODate("2025-08-27T23:59:59Z"),
+    "activo": true
+    }
+)
+
+db.groups.insertOne(
+    {
+    "_id": "dsm_5a_1",
+    "nombreGrupo": "DSM 5A",
+    "turno": "Matutino",
+    "nivel": "TSU",
+    "semestre": 5,
+    "ciclo_id": "2025-A",
+    "carrera_id": "DSM",
+    "activo": true
+    }
+)
+db.groups.insertOne(
+    {
+    "_id": "dsm_5b_1",
+    "nombreGrupo": "DSM 5B",
+    "turno": "Matutino",
+    "nivel": "TSU",
+    "semestre": 5,
+    "ciclo_id": "2025-A",
+    "carrera_id": "DSM",
+    "activo": true
+    }
+)
+db.groups.insertOne(
+    {
+    "_id": "dsm_5c_1",
+    "nombreGrupo": "DSM 5C",
+    "turno": "Matutino",
+    "nivel": "TSU",
+    "semestre": 5,
+    "ciclo_id": "2025-A",
+    "carrera_id": "DSM",
+    "activo": true
+    }
+)
+db.groups.insertOne(
+    {
+    "_id": "dsm_5d_1",
+    "nombreGrupo": "DSM 5D",
+    "turno": "Matutino",
+    "nivel": "TSU",
+    "semestre": 5,
+    "ciclo_id": "2025-A",
+    "carrera_id": "DSM",
+    "activo": true
+    }
+)
+db.groups.insertOne(
+    {
+    "_id": "evnd_5e_1",
+    "nombreGrupo": "EVND 5E",
+    "turno": "Matutino",
+    "nivel": "TSU",
+    "semestre": 5,
+    "ciclo_id": "2025-A",
+    "carrera_id": "EVND",
+    "activo": true
+    }
+)
+db.groups.insertOne(
+    {
+    "_id": "ird_5f_1",
+    "nombreGrupo": "IRD 5F",
+    "turno": "Matutino",
+    "nivel": "TSU",
+    "semestre": 5,
+    "ciclo_id": "2025-A",
+    "carrera_id": "IRD",
+    "activo": true
+    }
+)
+
+db.users.insertMany([
+  {
+    nombre: "Carlos Mendoza",
+    correo: "carlos.alumno@schoolconnect.com",
+    password: 
+    rol: "alumno",
+    grupo_id: "dsm_5a_1",
+    activo: true,
+    fechaRegistro: ISODate("2025-06-10T08:00:00Z")
+  },
+  {
+    nombre: "Laura Torres",
+    correo: "laura.maestra@schoolconnect.com",
+    rol: "maestro",
+    grupo_id: "dsm_5a_1", // Si da clases a este grupo
+    activo: true,
+    fechaRegistro: ISODate("2025-06-10T08:10:00Z")
+  },
+  {
+    nombre: "Javier López",
+    correo: "javier.admin@schoolconnect.com",
+    rol: "administrador",
+    // puede no tener grupo si administra a todos
+    activo: true,
+    fechaRegistro: ISODate("2025-06-10T08:15:00Z")
+  },
+  {
+    nombre: "Silvia Ramírez",
+    correo: "silvia.personal@schoolconnect.com",
+    rol: "personal_administrativo",
+    // puede no estar asignada a grupo directamente
+    activo: true,
+    fechaRegistro: ISODate("2025-06-10T08:20:00Z")
+  }
+]);
