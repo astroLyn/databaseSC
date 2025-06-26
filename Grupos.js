@@ -39,5 +39,5 @@ const grupoSchema = new mongoose.Schema({
   }
 }, { timestamps: true }); // timestamps agrega createdAt y updatedAt automáticamente
 
-module.exports = mongoose.model('Grupo', grupoSchema);
+module.exports = mongoose.model('grupo', grupoSchema);
 

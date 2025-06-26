@@ -19,4 +19,4 @@ const cicloEscolarSchema = new mongoose.Schema({
   }
 }, { timestamps: true });
 
-module.exports = mongoose.model('CicloEscolar', cicloEscolarSchema);
+module.exports = mongoose.model('cicloEscolar', cicloEscolarSchema);
