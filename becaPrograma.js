@@ -11,7 +11,7 @@ const becaProgramaSchema = new mongoose.Schema({
     required: true
   },
   requisitos: {
-    type: String, // O puedes usar [String] si deseas lista separada
+    type: String,
     required: true
   },
   fechaInicio: {
